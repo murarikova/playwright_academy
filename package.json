@@ -1,0 +1,22 @@
+{
+  "name": "playwright_academy",
+  "version": "1.0.0",
+  "description": "automation in playwright in typescript",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/murarikova/playwright_academy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/murarikova/playwright_academy/issues"
+  },
+  "homepage": "https://github.com/murarikova/playwright_academy#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.0"
+  }
+}
