@@ -1,4 +1,6 @@
 import { Locator, Page } from "@playwright/test";
+import { DashboardPage } from "./dashboard_page.ts";
+import { LostPasswordPage } from "./lost_password_page.ts";
 
 export class LoginPage {
   readonly page: Page;
@@ -18,27 +20,34 @@ export class LoginPage {
 
   async open() {
     await this.page.goto(this.url);
+    return this; // ? Po otvoreni zustavam na login page tak pouzivam return this
   }
 
   async fillUsername(username: string) {
     await this.usernameInput.fill(username);
+    return this;
   }
 
   async fillPassword(password: string) {
     await this.passwordInput.fill(password);
+    return this;
   }
 
   async clickLoginButton() {
     await this.loginButton.click();
+    return new DashboardPage(this.page); // ? Po kliknutí na tlačítko Login, program pokračuje na Dashboard - proto používáme return new DashboardPage (jdeme na jinou stránku)
   }
 
-  async login(username: string, password: string) {
+  // ? Explicitní typovou anotaci používáme zejména při komplexních metodách, abychom i do budoucnosti (když se bude měnit obsah této metody) měli jasno, kam tato metoda bude pokračovat.
+  async login(username: string, password: string): Promise<DashboardPage> {
     await this.fillUsername(username);
     await this.fillPassword(password);
     await this.clickLoginButton();
+    return new DashboardPage(this.page);
   }
 
   async clickLostPasswordButton() {
     await this.lostPasswordButton.click();
+    return new LostPasswordPage(this.page);
   }
 }
