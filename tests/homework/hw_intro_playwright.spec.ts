@@ -7,3 +7,6 @@ test("HW test - Add iPhone into Basket", async ({ page }) => {
   await page.locator('//a[text()="iPhone"]').click();
   await page.locator("#button-cart").click();
 });
+
+
+
