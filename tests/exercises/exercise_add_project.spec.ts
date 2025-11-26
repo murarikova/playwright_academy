@@ -10,7 +10,7 @@ test("Create New Project", async ({ page }) => {
   await loginPage
     .open()
     .then((login) => login.login("pw_academy", "Playwright321!"))
-    .then((dashboardPage) => dashboardPage.clickProjets())
+    .then((dashboardPage) => dashboardPage.clickProjects())
     .then((projectsPage) => projectsPage.clickAddProject())
     .then((createNewProjectPage) => createNewProjectPage.fillName(projectName))
     .then((createNewProjectPage) => createNewProjectPage.clickSave())

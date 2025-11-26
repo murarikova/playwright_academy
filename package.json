@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "automation in playwright in typescript",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:ui": "playwright test --ui"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/murarikova/playwright_academy.git"
