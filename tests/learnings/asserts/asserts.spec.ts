@@ -47,7 +47,7 @@ test.describe("Asserts - Testing in Playwright", () => {
     await expect
       .soft(welcomePageHeader, "Failing Text Assert")
       .toHaveText("Vítejte");
-    await dashboardPage.clickProjets();
+    await dashboardPage.clickProjects();
   });
 });
 

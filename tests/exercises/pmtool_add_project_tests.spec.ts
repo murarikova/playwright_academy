@@ -6,7 +6,7 @@ test("Exercise: Asserts", async ({ page }) => {
   await loginPage
     .open()
     .then((login) => login.login("pw_academy", "Playwright321!"))
-    .then((dashboard) => dashboard.clickProjets());
+    .then((dashboard) => dashboard.clickProjects());
   const projectsTable = page.locator(".table-scrollable table");
   await expect(projectsTable, "Projects Table is Visible").toBeVisible();
   await page.locator('[test_id="Add Project"]').click();
