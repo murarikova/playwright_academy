@@ -8,7 +8,7 @@ export class CreateNewProjectModal {
 
   constructor(page: Page) {
     this.page = page;
-    this.nameInput = page.locator('div[data-testid="Name"]');
+    this.nameInput = page.locator('div[data-testid="Name"] input');
     this.saveButton = page.locator('button[type="submit"]');
   }
 
