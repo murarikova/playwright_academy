@@ -22,7 +22,7 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: "html",
+  reporter: [["html"], ["dot"]],
   timeout: 60_000, // ? Nastaveni timeoutu na 60s. (Timeut se nastavuje vzdy v ms) - maximalni doba behu testu
   globalTimeout: 1 * 60 * 60 * 1_000, // ? (=> zapis jedne hodiny) Nastaveni maximalni doby behu vsech spustenych testu
   expect: {
